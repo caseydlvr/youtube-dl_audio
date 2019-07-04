@@ -1,5 +1,5 @@
 # youtube-dl_audio
-A Node command line program that for downloading YouTube video audio to a folder. This is a time saving wrapper for [youtube-dl](https://ytdl-org.github.io/youtube-dl/index.html).
+A Node command line program for downloading YouTube video audio to a directory. This is a time saving wrapper for [youtube-dl](https://ytdl-org.github.io/youtube-dl/index.html).
 
 The script is currently built to handle a specific workflow of creating a directory, then downloading the video audio in two formats to that directory. However, I am currently working to make the script more generic and configurable.
 
