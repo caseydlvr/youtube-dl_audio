@@ -9,7 +9,7 @@ const BEST_ARGS = ['--audio-format', 'best'];
 const ALL_ARGS = ['-x', '-i', '--embed-thumbnail'];
 
 const fixDirName = dirName => {
-  return dirName.replace(/\//g, ', ');;
+  return dirName.replace(/\//g, ', ');
 }
 
 const getPath = dirName => {
