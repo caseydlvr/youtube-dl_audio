@@ -2,6 +2,7 @@
 
 const fs = require('fs');
 const child_process = require('child_process');
+const { extname } = require('path');
 
 const YOUTUBEDL = 'youtube-dl';
 const MP3_ARGS = ['--audio-format', 'mp3', '--audio-quality', '0'];
@@ -35,7 +36,7 @@ const dlBest = (videoId, path) => {
 const cleanup = path => {
   const imgExts = [ '.jpg', '.png', '.bmp', '.png']
   const files = fs.readdirSync(path);
-  const imgFiles = files.filter(file => imgExts.some(ext => file.toLowerCase().endsWith(ext)));
+  const imgFiles = files.filter(file => imgExts.some(ext => extname(file) === ext));
   imgFiles.forEach(file => fs.unlinkSync(`${path}/${file}`));
 }
 
