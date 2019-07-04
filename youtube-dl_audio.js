@@ -14,7 +14,7 @@ const fixDirName = dirName => {
 }
 
 const buildSavePath = dirName => {
-  return `${ process.cwd() }/${dirName}`;
+  return path.join(process.cwd(), dirName);
 }
 
 const makeDir = savePath => {
