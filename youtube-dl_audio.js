@@ -13,41 +13,41 @@ const fixDirName = dirName => {
   return dirName.replace(/\//g, ', ');
 }
 
-const getPath = dirName => {
+const buildSavePath = dirName => {
   return `${ process.cwd() }/${dirName}`;
 }
 
-const makeDir = path => {
-  fs.mkdirSync(path);
+const makeDir = savePath => {
+  fs.mkdirSync(savePath);
 }
 
-const runCmd = (cmd, args, path) => {
-  child_process.spawnSync(cmd, args, { cwd: path, stdio: 'inherit' });
+const runCmd = (cmd, args, savePath) => {
+  child_process.spawnSync(cmd, args, { cwd: savePath, stdio: 'inherit' });
 }
 
-const dlMp3 = (videoId, path) => {
-  runCmd(YOUTUBEDL, [videoId, ...ALL_ARGS, ...MP3_ARGS], path);
+const dlMp3 = (videoId, savePath) => {
+  runCmd(YOUTUBEDL, [videoId, ...ALL_ARGS, ...MP3_ARGS], savePath);
 }
 
-const dlBest = (videoId, path) => {
-  runCmd(YOUTUBEDL, [videoId, ...ALL_ARGS, ...BEST_ARGS], path);
+const dlBest = (videoId, savePath) => {
+  runCmd(YOUTUBEDL, [videoId, ...ALL_ARGS, ...BEST_ARGS], savePath);
 }
 
-const cleanup = path => {
+const cleanup = savePath => {
   const imgExts = ['.jpg', '.png', '.bmp', '.png'];
-  const files = fs.readdirSync(path);
+  const files = fs.readdirSync(savePath);
   const imgFiles = files.filter(file => imgExts.some(ext => extname(file) === ext));
-  imgFiles.forEach(file => fs.unlinkSync(`${path}/${file}`));
+  imgFiles.forEach(file => fs.unlinkSync(`${savePath}/${file}`));
 }
 
 const main = () => {
   const [,, videoId, dirName] = process.argv;
-  const path = getPath(fixDirName(dirName));
+  const savePath = buildSavePath(fixDirName(dirName));
 
-  makeDir(path);
-  dlMp3(videoId, path);
-  dlBest(videoId, path);
-  cleanup(path);
+  makeDir(savePath);
+  dlMp3(videoId, savePath);
+  dlBest(videoId, savePath);
+  cleanup(savePath);
 }
 
 main();
