@@ -1,5 +1,5 @@
 # youtube-dl_audio
-youtube-dl wrapper for downloading audio to a folder.
+youtube-dl wrapper for downloading video audio to a folder.
 
 Creates the a folder with the specified name in the current working directory. Extracts the video audio to both MP3 (highest VBR quality) and 'best' format (typically the unadultered video audio track) to the created folder. Video thumbnail is embedded into the audio tracks, when possible. 
 
@@ -9,5 +9,11 @@ Creates the a folder with the specified name in the current working directory. E
 ## Dependencies
 
 - youtube-dl available in $PATH
-- ffmpeg (for transcoding)
-- atomicparsley (for embedding thumbnail)
+- ffmpeg (used by youtube-dl for transcoding)
+- atomicparsley (used by youtube-dl for embedding thumbnails and metadata)
+
+### installing dependencies on macOS (using homebrew)
+
+- brew install youtube-dl
+- brew install ffmpeg
+- brew install atomicparsley
