@@ -13,7 +13,7 @@ This script has only been tested on macOS, but it should work on any platform as
 Current algorithm:
 
 1. Sanitize the FOLDER_NAME arg
-1. Create the folder with the specified name (DIRECTORY_NAME arg) in the current working directory
+1. Create a directory with the specified name (DIRECTORY_NAME arg) in the current working directory. This created directory is where the audio tracks are saved.
 1. Use youtube-dl to download the specified video's (YOUTUBE_VIDEO_ID) audio in mp3 format (highest VBR quality) to the save directory
 1. Use youtube-dl to download the specified video's (YOUTUBE_VIDEO_ID) audio in 'best' format (typically the unadultered video audio track) to the save directory
 1. Deletes any leftover image files in the save directory
