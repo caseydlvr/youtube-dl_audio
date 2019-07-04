@@ -17,7 +17,7 @@ Current algorithm:
 1. Use youtube-dl to download the specified video's (YOUTUBE_VIDEO_ID) audio in mp3 format (highest VBR quality) to the save directory
 1. Use youtube-dl to download the specified video's (YOUTUBE_VIDEO_ID) audio in 'best' format (typically the unadultered video audio track) to the save directory
 1. Deletes any leftover image files in the save directory
- - Leftover image files happen when the 'best' audio format doesn't support embedded thumbnails (youtube-dl errors out before cleaning up the downloaded thumbnail in this case, at least as currently configured)
+   * Leftover image files happen when the 'best' audio format doesn't support embedded thumbnails (youtube-dl errors out before cleaning up the downloaded thumbnail in this case, at least as currently configured)
 
 The command line output from this script is all from youtube-dl.
 
