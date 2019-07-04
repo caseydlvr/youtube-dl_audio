@@ -6,14 +6,14 @@ The script is currently built to handle a specific workflow of creating a direct
 This script has only been tested on macOS, but it should work on any platform as the file handling related functions and libraries are cross-platform.
 
 ## Usage
-`node youtube-dl_audio.js YOUTUBE_VIDEO_ID FOLDER_NAME`
+`node youtube-dl_audio.js YOUTUBE_VIDEO_ID DIRECTORY_NAME`
 
 ## Function
 
 Current algorithm:
 
 1. Sanitize the FOLDER_NAME arg
-1. Create the folder with the specified name (FOLDER_NAME arg) in the current working directory
+1. Create the folder with the specified name (DIRECTORY_NAME arg) in the current working directory
 1. Use youtube-dl to download the specified video's (YOUTUBE_VIDEO_ID) audio in mp3 format (highest VBR quality) to the save directory
 1. Use youtube-dl to download the specified video's (YOUTUBE_VIDEO_ID) audio in 'best' format (typically the unadultered video audio track) to the save directory
 1. Deletes any leftover image files in the save directory
