@@ -34,7 +34,7 @@ const dlBest = (videoId, path) => {
 }
 
 const cleanup = path => {
-  const imgExts = [ '.jpg', '.png', '.bmp', '.png']
+  const imgExts = ['.jpg', '.png', '.bmp', '.png'];
   const files = fs.readdirSync(path);
   const imgFiles = files.filter(file => imgExts.some(ext => extname(file) === ext));
   imgFiles.forEach(file => fs.unlinkSync(`${path}/${file}`));
