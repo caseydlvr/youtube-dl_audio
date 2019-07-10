@@ -9,7 +9,7 @@ const MP3_ARGS = ['--audio-format', 'mp3', '--audio-quality', '0'];
 const BEST_ARGS = ['--audio-format', 'best'];
 const ALL_ARGS = ['-x', '-i', '--embed-thumbnail'];
 
-const fixDirName = dirName => {
+const sanitizeDirName = dirName => {
   return dirName.replace(/\//g, ', ');
 }
 
@@ -42,7 +42,7 @@ const cleanup = savePath => {
 
 const main = () => {
   const [,, videoId, dirName] = process.argv;
-  const savePath = buildSavePath(fixDirName(dirName));
+  const savePath = buildSavePath(sanitizeDirName(dirName));
 
   makeDir(savePath);
   dlMp3(videoId, savePath);
