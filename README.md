@@ -12,7 +12,7 @@ This script has only been tested on macOS, but it should work on any platform as
 
 Current algorithm:
 
-1. Sanitize the DIRECTORY_NAME arg
+1. Sanitize the DIRECTORY_NAME arg. Replaces "/" with ", ", then sanitizes using the sanitize-filename package.
 1. Create a directory with the specified name (DIRECTORY_NAME arg) in the current working directory. This created directory is where the audio tracks are saved.
 1. Use youtube-dl to download the specified video's (YOUTUBE_VIDEO_ID) audio in mp3 format (highest VBR quality) to the save directory
 1. Use youtube-dl to download the specified video's (YOUTUBE_VIDEO_ID) audio in 'best' format (typically the unadultered video audio track) to the save directory
@@ -37,10 +37,10 @@ Note: `ERROR: Only mp3 and m4a/mp4 are supported for thumbnail embedding for now
 
 ## TODO
 
-- Make file handling code platform agnostic
- - Cross platform directory name sanitation
 - Allow configuring (via .env) youtube-dl location, rather than requiring youtube-dl to be in $PATH (or the same folder as youtube-dl_audio.js)
-- Make FOLDER_NAME arg optional (save to current working directory rather than creating a folder)
+- Make DIRECTORY_NAME arg optional (save to current working directory rather than creating a folder)
 - Allow specifying a full (and/or existing) save path, rather than only saving based on the current working directory
 - Investigate configuring youtube-dl to only download the video file once, rather than redownloading the video for every desired audio format (alternatively, only use youtube-dl to download the video, then manually call ffmpeg to do the desired audio track extraction and transcoding)
 - Allow configuring (via .env) audio formats and quality
+- Allow configuring (via .env) replacement string for characters stripped by sanitize-filename
+- Allow configuring (via .env) additional specific character replacements (e.g. could have "/" => ", " replacement be a configuration rather than hardcoded)
