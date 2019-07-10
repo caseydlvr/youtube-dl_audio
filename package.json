@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/caseydlvr/youtube-dl_audio/issues"
   },
-  "homepage": "https://github.com/caseydlvr/youtube-dl_audio#readme"
+  "homepage": "https://github.com/caseydlvr/youtube-dl_audio#readme",
+  "dependencies": {
+    "sanitize-filename": "^1.6.1"
+  }
 }
