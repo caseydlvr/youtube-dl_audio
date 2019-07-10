@@ -1,0 +1,19 @@
+{
+  "name": "youtube-dl_audio",
+  "version": "1.0.0",
+  "description": "A Node command line program for downloading YouTube video audio to a directory. This is a time saving wrapper for [youtube-dl](https://ytdl-org.github.io/youtube-dl/index.html).",
+  "main": "youtube-dl_audio.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/caseydlvr/youtube-dl_audio.git"
+  },
+  "author": "Casey de la Vega-Rawson",
+  "license": "GPL-3.0-only",
+  "bugs": {
+    "url": "https://github.com/caseydlvr/youtube-dl_audio/issues"
+  },
+  "homepage": "https://github.com/caseydlvr/youtube-dl_audio#readme"
+}
