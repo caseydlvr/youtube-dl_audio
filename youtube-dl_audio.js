@@ -3,6 +3,7 @@
 const fs = require('fs');
 const child_process = require('child_process');
 const path = require('path');
+const sanitize = require("sanitize-filename");
 
 const YOUTUBEDL = 'youtube-dl';
 const MP3_ARGS = ['--audio-format', 'mp3', '--audio-quality', '0'];
@@ -10,7 +11,7 @@ const BEST_ARGS = ['--audio-format', 'best'];
 const ALL_ARGS = ['-x', '-i', '--embed-thumbnail'];
 
 const sanitizeDirName = dirName => {
-  return dirName.replace(/\//g, ', ');
+  return sanitize(dirName.replace(/\//g, ', '));
 }
 
 const buildSavePath = dirName => {
