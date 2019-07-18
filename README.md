@@ -37,10 +37,10 @@ Note: `ERROR: Only mp3 and m4a/mp4 are supported for thumbnail embedding for now
 
 ## TODO
 
-- Allow configuring (via .env) youtube-dl location, rather than requiring youtube-dl to be in $PATH (or the same folder as youtube-dl_audio.js)
+- Allow configuring youtube-dl location, rather than requiring youtube-dl to be in $PATH (or the same folder as youtube-dl_audio.js)
 - Make DIRECTORY_NAME arg optional (save to current working directory rather than creating a folder)
 - Allow specifying a full (and/or existing) save path, rather than only saving based on the current working directory
 - Investigate configuring youtube-dl to only download the video file once, rather than redownloading the video for every desired audio format (alternatively, only use youtube-dl to download the video, then manually call ffmpeg to do the desired audio track extraction and transcoding)
-- Allow configuring (via .env) audio formats and quality
-- Allow configuring (via .env) replacement string for characters stripped by sanitize-filename
-- Allow configuring (via .env) additional specific character replacements (e.g. could have "/" => ", " replacement be a configuration rather than hardcoded)
+- Allow configuring audio formats and quality
+- Allow configuring replacement string for characters stripped by sanitize-filename
+- Allow configuring additional specific character replacements (e.g. could have "/" => ", " replacement be a configuration rather than hardcoded)
