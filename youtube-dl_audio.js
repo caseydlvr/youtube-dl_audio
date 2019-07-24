@@ -8,7 +8,7 @@ const sanitize = require("sanitize-filename");
 const YOUTUBEDL = 'youtube-dl';
 const MP3_ARGS = ['--audio-format', 'mp3', '--audio-quality', '0'];
 const BEST_ARGS = ['--audio-format', 'best'];
-const ALL_ARGS = ['-x', '-i', '--embed-thumbnail'];
+const ALL_ARGS = ['-x', '-i', '--embed-thumbnail', '--add-metadata'];
 
 const sanitizeDirName = dirName => {
   return sanitize(dirName.replace(/\//g, ', '));
