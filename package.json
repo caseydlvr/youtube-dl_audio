@@ -20,6 +20,6 @@
   },
   "homepage": "https://github.com/caseydlvr/youtube-dl_audio#readme",
   "dependencies": {
-    "sanitize-filename": "^1.6.1"
+    "sanitize-filename": "^1.6.2"
   }
 }
